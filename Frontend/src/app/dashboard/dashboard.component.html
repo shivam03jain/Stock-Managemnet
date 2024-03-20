@@ -1,0 +1,19 @@
+<div class="bg">
+    <nav>
+        <button class="basic dashboard" mat-button routerLink="">Dashboard</button>
+        <button class="basic" mat-button (click)="checkUser()">WatchList</button>
+        <div *ngIf="!localService.isAuthenticated(); else logout">
+            <button mat-raised-button routerLink="/register">Register</button>
+            <button mat-raised-button routerLink="/login">Login</button>
+        </div>
+        <ng-template #logout>
+            <button mat-raised-button (click)="logOut()">Logout</button>
+        </ng-template>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+<div class="stockData">
+    <app-user-form class="user-form"></app-user-form>
+    <app-market-data class="data"></app-market-data>
+</div>
+

@@ -1,0 +1,33 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="myVol">
+      <th mat-header-cell *matHeaderCellDef> My Vol. </th>
+      <td mat-cell *matCellDef="let element"> {{element.myVol}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="bidQuantity">
+      <th mat-header-cell *matHeaderCellDef> Bid Quantity </th>
+      <td mat-cell class="bid" *matCellDef="let element" [ngClass]="{'bid':element.bidQuantity != null}"> {{element.bidQuantity}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price | number:'.2'}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container class="ask" matColumnDef="askQuantity">
+      <th mat-header-cell *matHeaderCellDef> Ask Quantity </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'ask':element.askQuantity != null}"> {{element.askQuantity}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

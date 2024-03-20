@@ -1,0 +1,25 @@
+<form [formGroup]="marketData" (ngSubmit)="onSubmit()">
+    <mat-form-field  class="example-chip-list">
+    <mat-label> Enter Your Stocks..</mat-label>
+    <mat-chip-grid formControlName="symbols" #chipGrid aria-label="Enter fruits">
+        @for (symbol of symbols; track symbol) {
+        <mat-chip-row
+            (removed)="remove(symbol)"
+            [editable]="true"
+            (edited)="edit(symbol, $event)"
+            [aria-description]="'press enter to edit ' + symbol.name">
+            {{symbol.name}}
+            <button matChipRemove [attr.aria-label]="'remove ' + symbol.name">
+            <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-row>
+        }
+        <input  placeholder="New Stock..."
+                [matChipInputFor]="chipGrid"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)"/>
+    </mat-chip-grid>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="marketData.invalid">Submit</button>
+</form>

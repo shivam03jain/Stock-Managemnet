@@ -1,0 +1,7 @@
+<div class="marketTable">
+    <div *ngFor="let stock of stocksData">
+        <h3> {{stock.name}} ( {{stock.price}} ) </h3>
+        <app-table class="displayTables" [dataSource]="stock.table"></app-table>
+        <app-ladder [dataSource]="stock.ladder" [price]="stock.price"></app-ladder>
+    </div>
+</div>

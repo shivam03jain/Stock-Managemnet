@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content>
+        <h3>Login</h3>
+        <form  method="POST" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Create Password</mat-label>
+                <input type="password" matInput formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+        </form>
+        <p>Don't have an account ? <a routerLink="/register">Register</a></p>
+    </mat-card-content>
+</mat-card>

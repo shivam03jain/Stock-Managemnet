@@ -1,0 +1,32 @@
+<div class="watchlist">
+  <div class="navbg">
+    <nav>
+      <h3>
+        Watchlist
+      </h3>
+      <button mat-raised-button routerLink="">
+        Go To Dashboard
+      </button>
+    </nav>
+  </div>
+  <div class="form-data">
+    <form [formGroup]="watchlistForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite Stock..</mat-label>
+        <input formControlName="symbol" matInput placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="watchlistForm.invalid">Add</button>
+  </form>
+
+  <div *ngFor="let watchlist of watchlistData">
+    <app-watchlist-card class="watchlist-card" [name]="watchlist.name" [price]="watchlist.price"></app-watchlist-card>
+  </div>
+  </div>
+
+<div *ngFor="let watchlist of watchlistData">
+  <h3> {{watchlist.name}} ( {{watchlist.price}} ) </h3>
+  <app-table class="displayTables" [dataSource]="watchlist.table"></app-table>
+  <app-ladder [dataSource]="watchlist.ladder" [price]="watchlist.price"></app-ladder>
+</div>
+</div>
+

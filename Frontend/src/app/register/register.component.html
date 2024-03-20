@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-content>
+        <h3>Register</h3>
+        <form  method="POST" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Create Password</mat-label>
+                <input minlength="6" type="password" matInput formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Submit</button>
+        </form>
+        <p>Already have an account ? <a routerLink="/login">Login</a></p>
+    </mat-card-content>
+</mat-card>

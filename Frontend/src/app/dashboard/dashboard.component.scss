@@ -1,0 +1,52 @@
+.bg {
+    width: 100%;
+    background-color: rgb(122, 27, 185);
+    // position: sticky;
+    top: 0px;
+    // z-index: 1;
+    
+    nav{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .basic{
+            color: white;
+            font-size: 18px;
+        }
+
+        .dashboard{
+            font-size: 27px;
+            font-weight: 600;
+            padding: 10px 0px;
+            margin: 15px 0px;
+        }
+        
+
+        div {
+            display: flex;
+            width: 20%;
+            justify-content: space-between;
+        }
+    }
+}
+
+.stockData {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    align-items: start;
+    // height: 2000px;
+
+    .user-form{
+        width: 20%;
+    }
+
+    .data{
+        width: 70%;
+        margin: 40px 0px;
+    }
+}

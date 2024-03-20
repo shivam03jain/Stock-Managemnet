@@ -1,0 +1,30 @@
+.card {
+    width: 100%;
+    background-color: rgba(122, 27, 185,0.2) ;
+    display: flex;
+    margin: 0px 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid rgba(122,27,185,0.7);
+    box-sizing: border-box;
+
+    .data{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h4 , p{
+            margin: 2px 0px;
+        }
+    }
+
+
+
+    mat-icon{
+        color: red;
+        padding: 0px;
+    }
+}
